@@ -843,8 +843,6 @@ static void exec16(LOADPARAMS16 params, LPCSTR appname, LPCSTR cmdline, BOOL exi
                 /* loader expects arguments to be regular C strings */
                 start_dos_exe(appname, cmdline + 1);
             }
-#else
-            __wine_load_dos_exe(appname, cmdline + 1);
 #endif
             /* if we get back here it failed */
             instance = GetLastError();

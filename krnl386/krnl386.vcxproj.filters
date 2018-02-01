@@ -96,9 +96,6 @@
     <ClCompile Include="dosdev.c">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="dosexe.c">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="dosmem.c">
       <Filter>ソース ファイル</Filter>
     </ClCompile>

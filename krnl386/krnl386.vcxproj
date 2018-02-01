@@ -104,7 +104,6 @@
     <ClCompile Include="dma.c" />
     <ClCompile Include="dosaspi.c" />
     <ClCompile Include="dosdev.c" />
-    <ClCompile Include="dosexe.c" />
     <ClCompile Include="dosmem.c" />
     <ClCompile Include="dosvm.c" />
     <ClCompile Include="error.c" />

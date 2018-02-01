@@ -181,7 +181,6 @@ EXPORTS
   SizeofResource16 @175
   WinExec16 @176
   __wine_call_int_handler @177
-  __wine_load_dos_exe @178
   __wine_vxd_open @179 PRIVATE
   __wine_vxd_get_proc @180 PRIVATE
   IsOldWindowsTask @181
