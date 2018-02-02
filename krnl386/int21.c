@@ -4088,7 +4088,6 @@ void WINAPI DOSVM_Int21Handler( CONTEXT *context )
 
     case 0x02: /* WRITE CHARACTER TO STANDARD OUTPUT */
         TRACE("Write Character to Standard Output\n");
-        DOSVM_PutChar(DL_reg(context));
         break;
 
     case 0x03: /* READ CHARACTER FROM STDAUX  */
@@ -4109,7 +4108,6 @@ void WINAPI DOSVM_Int21Handler( CONTEXT *context )
         else 
         {
             TRACE("Direct Console Output\n");
-            DOSVM_PutChar(DL_reg(context));
             /*
              * At least DOS versions 2.1-7.0 return character 
              * that was written in AL register.

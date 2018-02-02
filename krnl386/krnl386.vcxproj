@@ -110,7 +110,6 @@
     <ClCompile Include="fpu.c" />
     <ClCompile Include="global.c" />
     <ClCompile Include="instr.c" />
-    <ClCompile Include="int10.c" />
     <ClCompile Include="int13.c" />
     <ClCompile Include="int15.c" />
     <ClCompile Include="int21.c" />
@@ -138,14 +137,12 @@
     </ClCompile>
     <ClCompile Include="thunk.c" />
     <ClCompile Include="utthunk.c" />
-    <ClCompile Include="vga.c" />
     <ClCompile Include="vxd.c" />
     <ClCompile Include="wowthunk.c" />
     <ClCompile Include="wow_handle.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dosexe.h" />
-    <ClInclude Include="vga.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="krnl386.def" />

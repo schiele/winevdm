@@ -81,9 +81,6 @@
     <ClCompile Include="wowthunk.c">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="vga.c">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="dma.c">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
@@ -103,9 +100,6 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="int2f.c">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="int10.c">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="int13.c">
@@ -140,9 +134,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="vga.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="dosexe.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
