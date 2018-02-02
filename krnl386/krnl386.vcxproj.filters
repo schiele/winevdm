@@ -48,9 +48,6 @@
     <ClCompile Include="thunk.c">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="timer.c">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="utthunk.c">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
@@ -93,9 +90,6 @@
     <ClCompile Include="dosaspi.c">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="dosdev.c">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="dosmem.c">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
@@ -111,9 +105,6 @@
     <ClCompile Include="int2f.c">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="int09.c">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="int10.c">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
@@ -121,9 +112,6 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="int15.c">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="int16.c">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="int21.c">
@@ -136,9 +124,6 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="int31.c">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="int33.c">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="int67.c">

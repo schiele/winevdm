@@ -54,8 +54,6 @@ typedef struct
 typedef struct
 {
     CDROM_DEVICE_HEADER hdr;
-    WINEDEV_THUNK thunk;
-
     WORD  cdrom_segment;        /* Real mode segment for CDROM_HEAP */
     WORD  cdrom_selector;	/* Protected mode selector for CDROM_HEAP */
 } CDROM_HEAP;
@@ -212,20 +210,6 @@ void WINAPI DOSVM_Int2fHandler( CONTEXT *context )
            INT_BARF( context, 0x2f );
        }
        break;
-    case 0x4f:
-        switch (LOBYTE(context->Eax))
-        {
-        case 0x01: /*get code page*/
-            SET_AX(context, 0);
-            SET_BX(context, GetConsoleCP());
-            break;
-        default:
-            INT_BARF(context, 0x2f);
-            SET_AX(context, 1);
-            SET_CFLAG(context);
-
-        }
-        break;
     case 0x56:  /* INTERLNK */
        switch(LOBYTE(context->Eax))
        {
@@ -1055,59 +1039,4 @@ static void MSCDEX_Handler(CONTEXT* context)
        FIXME("Unimplemented MSCDEX function 0x%02X.\n", LOBYTE(context->Eax));
        break;
     }
-}
-
-/* prototypes */
-static void WINAPI cdrom_strategy(CONTEXT*ctx);
-static void WINAPI cdrom_interrupt(CONTEXT*ctx);
-
-/* device info */
-static const WINEDEV cdromdev =
-{
-    "WINE_CD_",
-    ATTR_CHAR|ATTR_REMOVABLE|ATTR_IOCTL,
-    cdrom_strategy, cdrom_interrupt
-};
-
-static REQUEST_HEADER *cdrom_driver_request;
-
-/* Return to caller */
-static void do_lret(CONTEXT*ctx)
-{
-    WORD *stack = CTX_SEG_OFF_TO_LIN(ctx, ctx->SegSs, ctx->Esp);
-
-    ctx->Eip   = *(stack++);
-    ctx->SegCs = *(stack++);
-    ctx->Esp  += 2*sizeof(WORD);
-}
-
-static void WINAPI cdrom_strategy(CONTEXT*ctx)
-{
-    cdrom_driver_request = CTX_SEG_OFF_TO_LIN(ctx, ctx->SegEs, ctx->Ebx);
-    do_lret( ctx );
-}
-
-static void WINAPI cdrom_interrupt(CONTEXT*ctx)
-{
-    if (cdrom_driver_request->unit > CDROM_GetHeap()->hdr.units)
-        cdrom_driver_request->status = STAT_ERROR | 1; /* unknown unit */
-    else
-        MSCDEX_Request((BYTE*)cdrom_driver_request, ISV86(ctx));
-
-    do_lret( ctx );
-}
-
-/**********************************************************************
- *         MSCDEX_InstallCDROM  [internal]
- *
- * Install the CDROM driver into the DOS device driver chain.
- */
-void MSCDEX_InstallCDROM(void)
-{
-    CDROM_HEAP *cdrom_heap = CDROM_GetHeap();
-
-    DOSDEV_SetupDevice( &cdromdev,
-                        cdrom_heap->cdrom_segment,
-                        FIELD_OFFSET(CDROM_HEAP, hdr),
-                        FIELD_OFFSET(CDROM_HEAP, thunk) );
 }
