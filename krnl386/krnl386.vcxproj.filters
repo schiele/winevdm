@@ -84,9 +84,6 @@
     <ClCompile Include="dma.c">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="dosaspi.c">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="dosmem.c">
       <Filter>ソース ファイル</Filter>
     </ClCompile>

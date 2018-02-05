@@ -102,7 +102,6 @@
     <ClCompile Include="atom.c" />
     <ClCompile Include="conf.c" />
     <ClCompile Include="dma.c" />
-    <ClCompile Include="dosaspi.c" />
     <ClCompile Include="dosmem.c" />
     <ClCompile Include="dosvm.c" />
     <ClCompile Include="error.c" />
